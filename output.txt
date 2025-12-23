@@ -1,0 +1,18 @@
+#!/bin/bash
+
+output_file="output.txt"
+> "$output_file"  # Datei leeren
+
+# Tree-Struktur am Anfang
+echo "=== DIRECTORY TREE ===" >> "$output_file"
+tree . >> "$output_file" 2>/dev/null || find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g' >> "$output_file"
+echo "" >> "$output_file"
+echo "=== FILE CONTENTS ===" >> "$output_file"
+echo "" >> "$output_file"
+
+# Alle Dateien mit Inhalt
+find . -type f -not -path '*/\.*' | sort | while read file; do
+  echo "### FILE: $file ###" >> "$output_file"
+  cat "$file" >> "$output_file"
+  echo "" >> "$output_file"
+done
