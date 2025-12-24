@@ -7,6 +7,15 @@
 	- arena_init
 	- arena_alloc
 	- arena_free_all
+- gapbuffer.c
+  -   line_init
+  -   line_insert_char
+  -   line_delete_char_back
+  -   line_delete_char_forward
+  -   line_move_gap
+  -   line_length
+  -   line_get_char
+
 - editor.c
 	- editor_init
 	- editor_cleanup
