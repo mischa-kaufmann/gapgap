@@ -9,7 +9,6 @@ void line_init(Line *line)
     line->gap_end = MAX_LINE_LENGTH;   
 };
 
-
 // ============================================================================
 // line_insert_char
 // ============================================================================
@@ -109,9 +108,8 @@ uint8_t n; how many Bytes. i cap this to 8 Bytes cause the line are short.
 
 uint8_t gap_length(Line *line)
 {
-    uint8_t gap_length = line->gap_end - line->gap_start;
+    return line->gap_end - line->gap_start;
 
-    return gap_length;
 };
 
 // ============================================================================
