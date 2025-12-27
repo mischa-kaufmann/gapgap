@@ -93,4 +93,4 @@ int main(int argc, char *argv[])
     editor_cleanup(&editor);
 
     return 0;
-}
+};
